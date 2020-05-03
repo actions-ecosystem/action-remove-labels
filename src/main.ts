@@ -1,5 +1,5 @@
 import * as core from '@actions/core';
-import {Processor, ProcessorOptions} from './Processor';
+import { Processor, ProcessorOptions } from './Processor';
 
 async function run(): Promise<void> {
   try {
@@ -16,7 +16,7 @@ async function run(): Promise<void> {
 async function getAndValidateArgs(): Promise<ProcessorOptions> {
   try {
     const args: ProcessorOptions = {
-      githubToken: core.getInput('github_token', {required: true}),
+      githubToken: core.getInput('github_token', { required: true }),
 
       labels: core
         .getInput('labels')
