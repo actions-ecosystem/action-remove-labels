@@ -1,25 +1,24 @@
 {
-  "name": "action-size",
-  "version": "0.1.0",
+  "name": "action-remove-labels",
+  "version": "1.0.0",
   "private": true,
-  "description": "Counts the number of lines changed in a pull request",
+  "description": "Remove labels from an issue or a pull request",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc && ncc build",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
-    "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions-ecosystem/action-size.git"
+    "url": "git+https://github.com/actions-ecosystem/action-remove-labels.git"
   },
   "keywords": [
     "actions",
     "github",
-    "size"
+    "labels"
   ],
   "author": "The Actions Ecosystem Authors",
   "license": "Apache 2.0",
