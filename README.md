@@ -2,6 +2,7 @@
 
 [![actions-workflow-test][actions-workflow-test-badge]][actions-workflow-test]
 [![release][release-badge]][release]
+[![license][license-badge]][license]
 
 ![screenshot](./docs/assets/screenshot.png)
 
@@ -14,12 +15,12 @@ It would be more useful to use this with other GitHub Actions' outputs.
 
 ## Inputs
 
-|      Key       | Required |                                 Default                                  |                                 Note                                 |
-| -------------- | -------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------- |
-| `github_token` | `true`   | N/A                                                                      | Must be in form of `github_token: ${{ secrets.github_token }}`.      |
-| `labels`       | `true`   | N/A                                                                      | Must be in form of a string with line breaks. See the example below. |
-| `repo`         | `false`  | `${{ github.repository }}`                                               | The owner and repository name. e.g. `Codertocat/Hello-World`.        |
-| `number`       | `false`  | The number of the issue or pull request which has triggered this action. |                                                                      |
+|     NAME     |                                           DESCRIPTION                                           |   TYPE   | REQUIRED |          DEFAULT           |
+|--------------|-------------------------------------------------------------------------------------------------|----------|----------|----------------------------|
+| github_token | A GitHub token.                                                                                 | `string` | `true`   | `N/A`                      |
+| labels       | The labels' name to be removed. Must be separated with line breaks if there're multiple labels. | `string` | `true`   | `N/A`                      |
+| repo         | The owner and repository name. e.g.) Codertocat/Hello-World.                                    | `string` | `false`  | `${{ github.repository }}` |
+| number       | The number of the issue or pull request.                                                        | `number` | `false`  | `N/A`                      |
 
 ## Example
 
@@ -76,3 +77,6 @@ Action Remove Labels is released under the [Apache License 2.0](./LICENSE).
 
 [release]: https://github.com/actions-ecosystem/action-remove-labels/releases
 [release-badge]: https://img.shields.io/github/v/release/actions-ecosystem/action-remove-labels?style=for-the-badge&logo=github
+
+[license]: LICENSE
+[license-badge]: https://img.shields.io/github/license/actions-ecosystem/action-remove-labels?style=for-the-badge
