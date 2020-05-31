@@ -10,6 +10,7 @@ async function run(): Promise<void> {
       .split('\n')
       .filter(l => l !== '');
     const [owner, repo] = core.getInput('repo').split('/');
+    const removeAll = core.getInput('remove_all');
     const number =
       core.getInput('number') === ''
         ? github.context.issue.number
@@ -20,6 +21,15 @@ async function run(): Promise<void> {
     }
 
     const client = new github.GitHub(githubToken);
+
+    if (removeAll) {
+      client.issues.removeAllLabels({
+        owner,
+        repo,
+        issue_number: number 
+      });
+      return;
+    }
 
     for (const label of labels) {
       await client.issues.removeLabel({
