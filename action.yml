@@ -8,6 +8,10 @@ inputs:
   labels:
     description: The labels' name to be removed. Must be separated with line breaks if there're multiple labels.
     required: true
+  remove_all:
+    description: The option to remove all labels
+    required: false
+    default: false
   repo:
     description: The owner and repository name. e.g.) Codertocat/Hello-World
     required: false
