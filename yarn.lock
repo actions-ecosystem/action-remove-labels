@@ -865,10 +865,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@octokit/webhooks@^7.4.0":
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/@octokit/webhooks/-/webhooks-7.4.0.tgz#1933f65ac20511c554b87533e9b4a632a05a27f6"
-  integrity sha512-BcgdEEtSfhImfXKMIS0ZBaqO6eqSoKKi+p1ZEsR6wbGjjC7OtTTDImD/Z34aL0wOIamd8Jf+pvpsZy6PtGtm+g==
+"@octokit/webhooks@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@octokit/webhooks/-/webhooks-7.7.0.tgz#12218749aa64d2257b60b9a880ad3c9a4ce43ca5"
+  integrity sha512-3IZGo2vFAYWoY333PDGBAZFpar4BSiD5jsTylMIi1Zca+2c7dVa6rhFSSvQQ7fT/iXMbRi9MIIIxm68CwaSBYA==
   dependencies:
     debug "^4.0.0"
 
