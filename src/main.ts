@@ -19,7 +19,7 @@ async function run(): Promise<void> {
       return;
     }
 
-    const client = new github.GitHub(githubToken);
+    const client = github.getOctokit(githubToken);
 
     for (const label of labels) {
       await client.issues.removeLabel({
@@ -31,7 +31,10 @@ async function run(): Promise<void> {
     }
   } catch (e) {
     core.error(e);
-    core.setFailed(e.message);
+
+    if (core.getInput('fail_on_error') === 'true') {
+      core.setFailed(e.message);
+    }
   }
 }
 
