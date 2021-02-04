@@ -15,6 +15,10 @@ inputs:
   number:
     description: The number of the issue or pull request.
     required: false
+  fail_on_error:
+    description: Whether the action fails or not when getting errors. [true,false]
+    default: 'false'
+    required: false
 runs:
   using: node12
   main: dist/index.js
