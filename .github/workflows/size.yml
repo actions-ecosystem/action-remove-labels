@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions-ecosystem/action-size@v2
+      - uses: actions-ecosystem/action-size@v2.2.0
         id: size
 
       - uses: actions-ecosystem/action-remove-labels@v1
