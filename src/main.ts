@@ -3,12 +3,9 @@ import * as core from '@actions/core';
 
 async function run(): Promise<void> {
   try {
-    const githubToken = core.getInput('github_token', { required: true });
+    const githubToken = core.getInput('github_token', {required: true});
 
-    const labels = core
-      .getInput('labels')
-      .split('\n')
-      .filter(l => l !== '');
+    const labels = core.getMultilineInput('labels');
     const [owner, repo] = core.getInput('repo').split('/');
     const number =
       core.getInput('number') === ''
