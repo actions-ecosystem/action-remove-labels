@@ -36,7 +36,6 @@ jobs:
   remove_label:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-remove-labels@v1
         if: ${{ startsWith(github.event.comment.body, '/remove-labels') }}
         with:
@@ -54,7 +53,6 @@ jobs:
   remove_labels:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-remove-labels@v1
         if: ${{ startsWith(github.event.comment.body, '/remove-labels') }}
         with:
