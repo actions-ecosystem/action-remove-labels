@@ -13,7 +13,7 @@ jobs:
       - uses: actions-ecosystem/action-size@v2
         id: size
 
-      - uses: actions-ecosystem/action-remove-labels@v1
+      - uses: actions-ecosystem/action-remove-labels@v1.1.0
         with:
           github_token: ${{ secrets.github_token }}
           labels: ${{ steps.size.outputs.stale_labels }}
