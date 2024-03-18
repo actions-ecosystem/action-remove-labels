@@ -21,28 +21,21 @@ async function run(): Promise<void> {
 
     const client = github.getOctokit(githubToken);
 
-    const remaining = [];
     for (const label of labels) {
       try {
-        await client.issues.removeLabel({
+        const response = await client.rest.issues.removeLabel({
           name: label,
           owner,
           repo,
           issue_number: number
         });
       } catch (e) {
-        core.warning(`failed to remove label: ${label}: ${e}`);
-        remaining.push(label);
+        core.warning(`Failed to remove label: ${label}: ${e}`);
       }
     }
-
-    if (remaining.length) {
-      throw new Error(`failed to remove labels: ${remaining}`);
-    }
   } catch (e) {
-    core.error(e);
-
-    if (core.getInput('fail_on_error') === 'true') {
+    if (e instanceof Error) {
+      core.error(e);
       core.setFailed(e.message);
     }
   }
