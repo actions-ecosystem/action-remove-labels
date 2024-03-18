@@ -57,10 +57,9 @@ function run() {
                 return;
             }
             const client = github.getOctokit(githubToken);
-            const remaining = [];
             for (const label of labels) {
                 try {
-                    yield client.rest.issues.removeLabel({
+                    const response = yield client.rest.issues.removeLabel({
                         name: label,
                         owner,
                         repo,
@@ -68,12 +67,8 @@ function run() {
                     });
                 }
                 catch (e) {
-                    core.warning(`failed to remove label: ${label}: ${e}`);
-                    remaining.push(label);
+                    core.warning(`Failed to remove label: ${label}: ${e}`);
                 }
-            }
-            if (remaining.length) {
-                throw new Error(`failed to remove labels: ${remaining}`);
             }
         }
         catch (e) {
